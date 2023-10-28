@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "01100",
-    "slug": "01100",
+    "name": "app01100",
+    "slug": "app01100",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -11,9 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "supportsTablet": true
     },
@@ -21,10 +19,30 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.hedilarbi912.app01100"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ab0430cc-715e-4842-b9ea-de30795a776e"
+      }
+    },
+    "plugins": [
+      [
+        "expo-location",
+        {
+          "locationAlwaysAndWhenInUsePermission": "Permettre à $(PRODUCT_NAME) d'utiliser votre emplacement."
+        }
+      ],
+      [
+        "expo-image-picker",
+        {
+          "cameraPermission": "Permettre à $(PRODUCT_NAME) d'utiliser votre caméra."
+        }
+      ]
+    ]
   }
 }

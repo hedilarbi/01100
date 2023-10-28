@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "480721514270",
+    "project_id": "project-970749311735093083",
+    "storage_bucket": "project-970749311735093083.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:480721514270:android:0b9b308e872a20a880e30f",
+        "android_client_info": {
+          "package_name": "com.hedilarbi912.app01100"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBh33jpWmNR-DVfF3_9W1Sr3MEJIeW6q1Y"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

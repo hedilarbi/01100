@@ -1,26 +1,32 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef } from "react";
 import { WebView } from "react-native-webview";
 
-const WebViewComponent = ({ webviewUrl, onMessage }) => {
-  let webViewRef = useRef(null);
+const WebViewComponent = ({ webviewUrl }) => {
+  const webViewRef = useRef(null);
+
   const cookieScript = `
-  document.cookie = "myCookie=cookieValue";
-  var cookieValue = document.cookie;
-  window.ReactNativeWebView.postMessage(cookieValue);
- `;
-  useEffect(() => {
-    if (webViewRef && webViewRef.current) {
+    console.log('Attempting to retrieve cookie');
+    window.ReactNativeWebView.postMessage(document.cookie);
+  `;
+
+  const handleMessage = (event) => {
+    const data = event.nativeEvent.data;
+    console.log("Received message:", data);
+  };
+
+  const handleLoad = () => {
+    if (webViewRef.current) {
       webViewRef.current.injectJavaScript(cookieScript);
     }
-  }, [cookieScript]);
+  };
 
   return (
     <WebView
-      source={{ uri: webviewUrl }}
       ref={webViewRef}
+      source={{ uri: webviewUrl }}
       javaScriptEnabled={true}
-      onMessage={onMessage}
-      injectedJavaScript={cookieScript}
+      onMessage={handleMessage}
+      onLoad={handleLoad}
     />
   );
 };

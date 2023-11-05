@@ -9,7 +9,7 @@ const CookieConsentModal = ({ showModal, onAcceptCookies, onDenyCookies }) => {
           style={{
             borderTopLeftRadius: 16,
             borderTopRightRadius: 16,
-            height: Dimensions.get("window").height * 0.3,
+            height: Dimensions.get("window").height * 0.4,
             backgroundColor: "white",
             padding: 16,
           }}

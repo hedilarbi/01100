@@ -11,24 +11,29 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": [
+      "**/*"
+    ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.hedilarbi912.app01100"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
       },
+      "googleServicesFile": "./google-services.json",
+      "permissions": [
+        "android.permission.ACCESS_COARSE_LOCATION",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.FOREGROUND_SERVICE",
+        "android.permission.RECORD_AUDIO"
+      ],
       "package": "com.hedilarbi912.app01100"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "ab0430cc-715e-4842-b9ea-de30795a776e"
-      }
     },
     "plugins": [
       [
@@ -43,6 +48,11 @@
           "cameraPermission": "Permettre à $(PRODUCT_NAME) d'utiliser votre caméra."
         }
       ]
-    ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "831aec09-8b4a-4b7e-ae65-646db34af8f3"
+      }
+    }
   }
 }

@@ -1,7 +1,7 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import React, { useState } from "react";
 import { StatusBar } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { SafeAreaProvider, SafeAreaView } from "react-native-safe-area-context";
 import * as Notifications from "expo-notifications";
 import useGetCameraPermissions from "./src/hooks/useGetCameraPermissions";
 import useGetLocationPermission from "./src/hooks/useGetLocationPermission";
@@ -44,7 +44,7 @@ export default function App() {
   };
 
   return (
-    <>
+    <SafeAreaProvider>
       <StatusBar backgroundColor="black" />
       <SafeAreaView style={{ flex: 1 }}>
         <WebViewComponent webviewUrl="https://01100.fr" onMessage={onMessage} />
@@ -58,6 +58,6 @@ export default function App() {
           }
         />
       </SafeAreaView>
-    </>
+    </SafeAreaProvider>
   );
 }

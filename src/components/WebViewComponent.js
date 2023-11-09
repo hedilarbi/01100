@@ -24,6 +24,7 @@ const WebViewComponent = ({ webviewUrl }) => {
     <WebView
       ref={webViewRef}
       source={{ uri: webviewUrl }}
+      style={{ flex: 1 }}
       javaScriptEnabled={true}
       onMessage={handleMessage}
       onLoad={handleLoad}
